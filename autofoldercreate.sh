@@ -12,13 +12,10 @@ done
 read -p "How many assignments do you have: " assignmentcount
 
 for ((i=0; i<${#courses[@]}; i++)); do
-    for ((j=0; j<assignmentcount; j++)) do
-        mkdir -p "./$courses[i]/A$j"
+    for ((j=1; j<=assignmentcount; j++)) do
+        mkdir -p "./${courses[i]}/A$j"
     done
 done
-
-echo "Created" $coursecount "folders with" $assignmentcount "subfolders."
-
 
 echo "Created $coursecount folders named ${courses[@]} with $assignmentcount subfolders."
 
